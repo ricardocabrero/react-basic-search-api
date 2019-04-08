@@ -2,7 +2,7 @@
 ## Ejemplo fetch API
 
 [OMDb API](http://www.omdbapi.com/)
-*Curso Udemy: Aprendiendo React JS*
+*Curso Udemy: Aprendiendo React JS*  
 *[Udemy](https://www.udemy.com/aprendiendo-react/)*
 
 
