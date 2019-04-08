@@ -3,7 +3,7 @@
 
 [OMDb API](http://www.omdbapi.com/)
 
-Curso Udemy
+*Curso Udemy: Aprendiendo React*
 
 *[Udemy](https://www.udemy.com/aprendiendo-react/)*
 
