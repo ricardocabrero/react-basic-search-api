@@ -1,3 +1,8 @@
+# React Basic Search App
+## Ejemplo fetch API
+
+[OMDb API](http://www.omdbapi.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
