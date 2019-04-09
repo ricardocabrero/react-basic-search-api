@@ -32,8 +32,9 @@ export class CardItem extends Component {
                         <p className="title is-4">{title}</p>
                         <p className="subtitle is-6">{year}</p>
                     </div>
-                </div>
+                </div>                
             </div>
+            <span className="icon-info">i</span>
         </Link> 
         )
     }
