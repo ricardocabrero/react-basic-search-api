@@ -11,9 +11,7 @@ export class Home extends Component {
     }
     _handleSessionStorage(dataSession){
         if(window.sessionStorage.length > 0){
-            for(let i = 0; i < dataSession.length; i++){
-                window.sessionStorage.removeItem(i,JSON.stringify(dataSession[i]))
-            }    
+            window.sessionStorage.clear()
         }
         for(let i = 0; i < dataSession.length; i++){
           window.sessionStorage.setItem(i,JSON.stringify(dataSession[i]))
