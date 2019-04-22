@@ -13,7 +13,7 @@ export class CardItem extends Component {
     }
     _replaceImgeNotFound = () => {
         this.img.src = NoFoundImg    
-     }
+    }
     render(){
         const { title, poster, year, id } = this.props
         return(

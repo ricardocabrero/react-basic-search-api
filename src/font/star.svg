@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="star" horiz-adv-x="1000" >
+<font-face font-family="star" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="star-filled" unicode="&#xe800;" d="M297 498q69 152 114 252 6 15 24 15t23-15l114-252q164-18 274-30 15-3 21-18t-6-27l-204-187q33-161 55-270 3-15-10-25t-27-2l-240 136q-144-81-240-136-15-9-28 2t-11 25l56 270q-122 112-204 187-12 11-6 26t21 19z" horiz-adv-x="869" />
+</font>
+</defs>
+</svg>

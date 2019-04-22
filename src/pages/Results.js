@@ -20,20 +20,30 @@ export class Results extends Component {
             resultsStorage
         })
     }
+    conditionalLocalStorageBtn(){
+        const localStorage = window.localStorage.length > 0
+        if(localStorage){
+            return <Btn label="Favorite list" link="/favorites"/>
+        }
+    }
     componentDidMount(){
         this._handleStorage()
     }
     render(){
         const { resultsStorage } = this.state
+        const noResults = window.sessionStorage.length === 0
+        ? <small>Please, return to Home page for search</small>
+        : <CardList movies={resultsStorage}/>
         return(
             <section className="results">
                 <h1 className="title">Results page</h1>
-                <Btn
-                    label='Back to Home'
-                    link='/'/>
-                <CardList
-                movies={resultsStorage}
-                />
+                <div className="btn-wrapper">
+                    <Btn
+                        label='Back to Home'
+                        link='/'/>
+                    {this.conditionalLocalStorageBtn()}
+                </div>
+                {noResults}
             </section>
         )
     }

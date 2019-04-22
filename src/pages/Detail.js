@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Btn } from '../components/Btn'
+import { Addfavorites } from '../components/Addfavorites'
 import  NoFoundImg  from '../img//no-img-found.jpg'
 
 const URL_API = 'http://www.omdbapi.com/?apikey=',
@@ -42,12 +43,11 @@ export class Detail extends Component {
                 <div className="btn-wrapper">
                     <Btn
                     label='Home'
-                    link='/'
-                    />
+                    link='/'/>
                     <Btn
                     label='Back to results'
-                    link='/results'
-                    />
+                    link='/results'/>
+                    <Addfavorites/>
                 </div>
                 <div className="card">
                     <div className="card-image">

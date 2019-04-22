@@ -1,3 +1,62 @@
+@font-face {
+  font-family: 'star';
+  src: url('./font/star.eot?63251149');
+  src: url('./font/star.eot?63251149#iefix') format('embedded-opentype'),
+       url('./font/star.woff2?63251149') format('woff2'),
+       url('./font/star.woff?63251149') format('woff'),
+       url('./font/star.ttf?63251149') format('truetype'),
+       url('./font/star.svg?63251149#star') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'star';
+    src: url('../font/star.svg?63251149#star') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "star";
+  font-style: normal;
+  font-weight: normal;
+  /* speak: none; */
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-star-filled:before { content: '\e800'; } /* '' */
+
 .App {
   text-align: center;
 }
@@ -45,9 +104,38 @@ section{
   transition: all .2s ease-in-out;
 }
 .home .card:hover,
-.results .card:hover{
+.results .card:hover,
+.favorites .card:hover{
   box-shadow: 0 0 6px #b3aeae;
   transform: scale(1.02);
+}
+.favorites-link{
+  color: #c3c2c2;
+  text-decoration: underline;
+  padding-top: 80px;
+  padding-bottom: 45px;
+  display: inline-block;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.favorites-link:before {
+  position: absolute;
+  font-family: 'star';
+  top: 30px;
+  line-height: 35px;
+  font-size: 50px;
+  right: 0;
+  content: "\E800";
+  width: 100%;
+}
+.results small {
+  display: block;
+  padding: 10px 0;
+}
+.results .btn-wrapper,
+.favorites .btn-wrapper{
+  display: flex;
+  justify-content: center;
 }
 @media (max-width:640px){
   .home .card,
@@ -67,25 +155,29 @@ section{
 }
 @media (max-width:1024px){
   .home .card-wrapper,
-  .results .card-wrapper {
+  .results .card-wrapper,
+  .favorites .card-wrapper {
     width: 23%;
   }
 }
 @media (max-width:768px){
   .home .card-wrapper,
-  .results .card-wrapper {
+  .results .card-wrapper,
+  .favorites .card-wrapper {
     width: 31.33%;
   }
 }
 @media (max-width:640px){
   .home .card-wrapper,
-  .results .card-wrapper {
+  .results .card-wrapper,
+  .favorites .card-wrapper {
     width: 48%;
   }
 }
 @media (max-width:360px){
   .home .card-wrapper,
-  .results .card-wrapper {
+  .results .card-wrapper,
+  .favorites .card-wrapper {
     width: 94%;
     margin: 0 3% 20px;
   }
@@ -103,10 +195,61 @@ section{
 .detail .title.is-4{
   font-size: 1.5rem!important;
 }
-.detail .btn-wrapper a{
+.detail .btn-wrapper a,
+.detail .btn-wrapper button,
+.results .btn-wrapper a,
+.favorites .btn-wrapper a,
+.favorites .btn-wrapper button{
   margin-left:5px;
 }
-.detail .btn-wrapper a:first-child{
+
+.detail .btn-wrapper button{
+  padding-right: 35px;
+  float: left;
+}
+
+@media(max-width:480px){
+    .detail .btn-wrapper button{
+      float: right;
+      max-width: 102px;
+      text-indent: -999px;
+      position: relative;
+      white-space: normal;
+    } 
+}
+
+@media(max-width:370px){
+  .detail .btn-wrapper button{
+    float: left;
+    text-indent: 0;
+    clear: both;
+    margin-left: 0;
+    margin-top: 5px;
+  } 
+}
+
+.detail .btn-wrapper button:before {
+  position: absolute;
+  font-family: 'star';
+  top: 0;
+  line-height: 35px;
+  font-size: 20px;
+  right: 8px;
+  content: "\e800";
+}
+
+@media(max-width:480px){
+  .detail .btn-wrapper button:before {
+    text-indent: 0;
+  }
+}
+
+.detail .btn-wrapper button.favorite:before{
+  color: #ffeb3b;
+}
+
+.detail .btn-wrapper a:first-child,
+.results .btn-wrapper a:first-child{
   margin-left:0;
 }
 .detail .card{
@@ -173,10 +316,11 @@ section{
     color: #fff;
     font-weight: bold;
     text-align: center;
-    line-height: 19px;
+    line-height: 21px;
     font-size: 13px;
   }
 }
+
 
 
 

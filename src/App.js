@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
 import { Results } from './pages/Results'
+import { Favorites } from './pages/Favorites'
 import { NotFound } from './pages/NotFound'
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           <Route path='/detail/:movieId' component={Detail}/>
           <Route path='/results' component={Results}/>
+          <Route path='/favorites' component={Favorites}/>
           <Route component={NotFound}/>
         </Switch>
       </div>

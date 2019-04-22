@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Title } from '../components/Title'
 import { Search } from '../components/Search'
@@ -33,6 +34,9 @@ export class Home extends Component {
         )               
     }
     render(){
+        const favorites = window.localStorage.length > 0 
+        ? <Link className="favorites-link" title="Your favorites" to="/favorites">Your favorites</Link>
+        : ""
         return(
             <section className="home">
                 <Title>
@@ -44,7 +48,8 @@ export class Home extends Component {
                 { this.state.usedSearch 
                 ? this._renderResults()
                 : <small>Please, use the form to search a movie <span>(enter the full title or a keyword)</span></small>
-                }   
+                } 
+                {favorites}  
             </section>    
         )
     }
