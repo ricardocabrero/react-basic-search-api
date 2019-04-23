@@ -8,7 +8,8 @@ import { CardList } from '../components/CardList'
 export class Home extends Component {
     state = {
         results: [],
-        usedSearch: false
+        usedSearch: false,
+        hasFavorites: false
     }
     _handleSessionStorage(dataSession){
         if(window.sessionStorage.length > 0){
@@ -33,8 +34,16 @@ export class Home extends Component {
           />
         )               
     }
+    componentDidMount(){
+        if(window.localStorage.length > 0){
+            this.setState({
+                hasFavorites: true
+            })
+        }
+    }
     render(){
-        const favorites = window.localStorage.length > 0 
+        const { hasFavorites } = this.state
+        const  favorites =  hasFavorites
         ? <Link className="favorites-link" title="Your favorites" to="/favorites">Your favorites</Link>
         : ""
         return(

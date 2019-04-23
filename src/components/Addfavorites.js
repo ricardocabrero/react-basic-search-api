@@ -65,7 +65,7 @@ export class Addfavorites extends Component {
             window.localStorage.setItem(this.nameStorage, this.idCollection)
          }
     }
-    _handleStorage  = () => {
+    _handleStorage(){
         const isLocalStorage = window.localStorage.length > 0
 
         isLocalStorage ? this._updateStorage()
