@@ -130,7 +130,11 @@ section{
 }
 .results small {
   display: block;
-  padding: 10px 0;
+  padding: 10px 0 140px;
+  background: url('./img/icon-error.png') bottom center no-repeat transparent;
+}
+.results small span{
+  display: block;
 }
 .results .btn-wrapper,
 .favorites .btn-wrapper{

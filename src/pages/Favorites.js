@@ -12,7 +12,8 @@ export class Favorites extends Component {
         this.urlIds = window.localStorage.getItem('favorites').split(',')
         this.arr = []
         this.state = {
-            favorites: []
+            favorites: [],
+            session: false
         }
     }
     _handleUrls = (id) => {
@@ -44,15 +45,23 @@ export class Favorites extends Component {
     }
     componentDidMount(){
         this._handleFavorites()
+        if(window.sessionStorage.length > 0){
+            this.setState({
+                session: true
+            })
+        }
     }
     render(){
-        const { favorites, clear } = this.state
+        const { favorites, clear, session } = this.state
         const clearList = clear
         ? ""
         : <div>
             <small>For delete one item from list access to detail</small>
             <CardList movies={favorites}/>
         </div>
+        const hasSession = session 
+        ? <Btn label='Results' link='/results'/>
+        : ""
         return(
             <section className="favorites">
                 <h1 className="title">
@@ -62,9 +71,7 @@ export class Favorites extends Component {
                     <Btn
                     label='Home'
                     link='/'/>
-                    <Btn
-                    label='Results'
-                    link='/results'/>
+                    {hasSession}
                     <button
                     onClick={this._handleClear}
                     disabled={clear} 

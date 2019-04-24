@@ -32,7 +32,7 @@ export class Results extends Component {
     render(){
         const { resultsStorage } = this.state
         const noResults = window.sessionStorage.length === 0
-        ? <small>Please, return to Home page for search</small>
+        ? <small>Oops! No results found, <span>please, return to Home page for search</span></small>
         : <CardList movies={resultsStorage}/>
         return(
             <section className="results">
