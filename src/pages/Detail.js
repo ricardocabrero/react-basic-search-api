@@ -18,7 +18,8 @@ export class Detail extends Component {
         })
     }
     state = {
-        movie: {}
+        movie: {},
+        hasSession: false
     }
     _fetchMovie({ id }){
         fetch(`${URL_API}${API_KEY}&i=${id}`)
@@ -34,19 +35,25 @@ export class Detail extends Component {
     componentDidMount(){
         const { movieId } = this.props.match.params  
         this._fetchMovie({ id: movieId })
+        if(window.sessionStorage.length !== 0){
+            this.setState({
+                hasSession: true
+            })
+        }
     }
     render(){
-        const { movie } = this.state
+        const { movie, hasSession } = this.state
         const { Title, Poster, Plot, Actors, Director, Year } = movie
+        const session = hasSession 
+        ? <Btn label='Back to results' link='/results'/>
+        : <Btn label="Favorite list" link="/favorites"/>
         return(
             <section className="detail">
                 <div className="btn-wrapper">
                     <Btn
                     label='Home'
                     link='/'/>
-                    <Btn
-                    label='Back to results'
-                    link='/results'/>
+                    {session}
                     <Addfavorites/>
                 </div>
                 <div className="card">
