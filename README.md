@@ -3,7 +3,7 @@
 
 [http://rc-react-basic.surge.sh/](http://rc-react-basic.surge.sh/)
 
-[OMDb API](http://www.omdbapi.com/)
+[OMDb API](http://www.omdbapi.com/){:target="_blank"}
 
 *Curso Udemy: Aprendiendo React*
 
