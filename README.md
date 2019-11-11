@@ -1,7 +1,7 @@
 # React Basic Search App
 ## Ejemplo fetch API
 
-[http://rc-react-basic.surge.sh/](http://rc-react-basic.surge.sh/{:target="_blank"})
+[http://rc-react-basic.surge.sh/](http://rc-react-basic.surge.sh/)
 
 [OMDb API](http://www.omdbapi.com/)
 
