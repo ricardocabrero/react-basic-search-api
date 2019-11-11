@@ -3,11 +3,11 @@
 
 [http://rc-react-basic.surge.sh/](http://rc-react-basic.surge.sh/)
 
-[OMDb API](http://www.omdbapi.com/)
+[OMDb API](http://www.omdbapi.com/{:target="_blank"})
 
 *Curso Udemy: Aprendiendo React*
 
-*[Udemy](https://www.udemy.com/aprendiendo-react/{:target="_blank"})*
+*[Udemy](https://www.udemy.com/aprendiendo-react/)*
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
